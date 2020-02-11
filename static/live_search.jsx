@@ -49,9 +49,9 @@ class CustomerSearch extends React.Component {
                     method = "GET" 
                     action="/search">
                     <div className="form-group">
-                        <label id="search-title" htmlFor="query"><h3>Customer Search</h3>
-                        </label>
-                        <input
+                        <label id="search-title" htmlFor="query"><h2>Customer Search</h2>
+                        </label>Search by first or last name  
+                        <input 
                             type="text"
                             className="form-control"
                             id="query"
@@ -62,7 +62,7 @@ class CustomerSearch extends React.Component {
                 </form><br /><br />
                     
                 <form className="form-inline-2" method = "GET" action="/">
-                    <div className="list" id="customer_list">
+                    <div className="list" id="customer_list"> <h3>Results</h3>
                         {this.renderCustomers()}
                     </div>
                 </form>
