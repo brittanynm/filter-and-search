@@ -8,7 +8,7 @@ app.secret_key = "ABC"
 
 
 
-@app.route("/search", methods=["GET"])
+@app.route("/customers", methods=["GET"])
 def search():
     customer_name = request.args.get("query")
     q = Customer.query
@@ -22,13 +22,6 @@ def search():
 
 @app.route("/live_search", methods = ["GET"])
 def index():
-
-    # customers = Customer.query.limit(200).all()
-
-    # return render_template("homepage.html", customers=customers)
-
-
-
     '''Filter search results'''
     search = request.args.get("query")
     q = Customer.query
@@ -45,12 +38,22 @@ def index():
         results[customer.customer_id] = {
             "first_name": customer.first_name,
             "last_name": customer.last_name,
-            "customer_id": customer.customer_id,
-        }
+            "company_id": customer.company_id}
 
     return jsonify(results)
 
+# @app.route("/dropdown", methods = ["GET"])
+# def dropdown():
 
+#     selection = request.args.get("dropdown")
+#     q = Company.query
+#     customers = (
+#         q.filter(
+
+#                 )
+#         )
+
+#     return jsonify(results)
 
 
 
