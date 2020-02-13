@@ -11,6 +11,8 @@ the following installed:
 - Python 3.0 or above
 - PostgreSQL
 
+To run this app on your own machine:
+
 
 1. Create a virtual environment
 
