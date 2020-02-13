@@ -1,11 +1,9 @@
-
 from flask import Flask, render_template, request, flash, redirect, session, jsonify
 from model import connect_to_db, Customer, Company
 
 app = Flask(__name__)
 
 app.secret_key = "ABC"
-
 
 
 @app.route("/customers", methods=["GET"])
@@ -19,25 +17,21 @@ def search():
     return render_template("homepage.html", customers=customers)
 
 
-
-@app.route("/live_search", methods = ["GET"])
+@app.route("/live_search", methods=["GET"])
 def index():
-    '''Filter search results'''
+    """Filter search results"""
     name = request.args.get("name")
     company = request.args.get("company")
 
     q = Customer.query
 
     if name:
-        q = (
-            q.filter(
-                (Customer.first_name.ilike(f"%{name}%"))
-                | (Customer.last_name.ilike(f"%{name}%"))
-            ))
+        q = q.filter(
+            (Customer.first_name.ilike(f"%{name}%"))
+            | (Customer.last_name.ilike(f"%{name}%"))
+        )
     if company:
-        q = (
-            q.filter(
-                (Customer.company_id == company)))
+        q = q.filter((Customer.company_id == company))
 
     customers = q.limit(20).all()
 
@@ -47,12 +41,13 @@ def index():
             "first_name": customer.first_name,
             "last_name": customer.last_name,
             "company_id": customer.company_id,
-            "company_name": customer.company.name
-            }
+            "company_name": customer.company.name,
+        }
 
     return jsonify(results)
 
-@app.route("/companies", methods = ["GET"])
+
+@app.route("/companies", methods=["GET"])
 def display_companies():
 
     companies = Company.query.all()
@@ -62,7 +57,6 @@ def display_companies():
         results[company.id] = company.name
 
     return jsonify(results)
-
 
 
 if __name__ == "__main__":
