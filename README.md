@@ -16,12 +16,10 @@ To run this app on your own machine:
 
 1. Create a virtual environment
 
-```
-python3 -m venv env
+```python3 -m venv env
 
 # Alternatively, if you have virtualenv installed
-virtualenv env
-```
+virtualenv env```
 
 2. Activate the environment and install dependencies from `requirements.txt`
 
