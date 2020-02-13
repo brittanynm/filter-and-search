@@ -66,6 +66,6 @@ __Frontend__: Javascript, React, HTML <br/>
  ## If I had more time...
  1) I would learn how to use React Router to include the filters in the URL parameters
  2) Learn and write front end testing
- 3) Added some styling
+ 3) Add some styling
 
 
