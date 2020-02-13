@@ -38,7 +38,7 @@ Create a PostgreSQL database called `customers`
 createdb customers
 ```
 
-Run this command to create tables and test data
+Run these commands to create tables and test data
 
 ```
 python3 model.py 
@@ -57,34 +57,19 @@ python3 server.py
 
 The site will be accessible at http://localhost:5000.
 
-## File structure
-
-static/
-  Contains static assets. 
-templates/
-  Currently only has one HTML file called
-  `homepage.html`
-model.py
-  Database schema and ORM classes written with SQLAlchemy
-server.py
-  Flask routes
-
-## Flask routes
-
-### `GET` /customers
-
-Display the homepage
-
-
 
 
 ## Tech Stack
 __Backend__: Python, Flask, PostgreSQL, SQLAlchemy <br/>
-__Frontend__: Javascript, React, HTML, CSS <br/>
+__Frontend__: Javascript, React, HTML <br/>
 
 
 ## Assumptions
  1) Assumed each customer could only have one company
  
+ ## If I had more time
+ 1) I would research how to include the filters in the URL parameters in React
+ 2) Learned and added front end testing
+ 3) Added some styling
 
 
