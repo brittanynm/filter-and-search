@@ -12,9 +12,7 @@ the following installed:
 - PostgreSQL
 
 
-### Install Python dependencies
-
-Create a virtual environment
+1. Create a virtual environment
 
 ```
 python3 -m venv env
@@ -23,22 +21,20 @@ python3 -m venv env
 virtualenv env
 ```
 
-Activate the environment and install dependencies from `requirements.txt`
+2. Activate the environment and install dependencies from `requirements.txt`
 
 ```
 source env/bin/activate
 pip3 install -r requirements
 ```
 
-### Initialize the database
-
-Create a PostgreSQL database called `customers`
+3. Create a PostgreSQL database called `customers`
 
 ```
 createdb customers
 ```
 
-Run these commands to create tables and test data
+4. Run these commands to create tables and test data
 
 ```
 python3 model.py 
@@ -47,15 +43,13 @@ python3 model.py
 python3 seed.py
 ```
 
-### Run Flask server
-
-Now you can run the server with
+5. Now you can run the server with
 
 ```
 python3 server.py
 ```
 
-The site will be accessible at http://localhost:5000.
+6. The site will be accessible at http://localhost:5000.
 
 
 
