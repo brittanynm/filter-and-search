@@ -87,7 +87,7 @@ class CustomerSearch extends React.Component {
                         <label id="search-dropdown" htmlFor="name">
                         </label>Filter by company  
                         <select id="dropdown" onChange={this.handleSearchChange}>
-                            <option value=''> Select All</option>
+                            <option value=''> All Companies</option>
                             {this.renderCompanies()} </select>
                     </div>
                 </form><br /><br />

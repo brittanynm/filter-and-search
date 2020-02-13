@@ -51,7 +51,7 @@ python3 seed.py
 python3 server.py
 ```
 
-6. The site will be accessible at http://localhost:5000.
+6. The site will be accessible at http://localhost:5000/customers.
 
 
 
