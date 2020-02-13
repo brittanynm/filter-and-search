@@ -55,17 +55,17 @@ python3 server.py
 
 
 
-## Tech Stack
+## Technologies
 __Backend__: Python, Flask, PostgreSQL, SQLAlchemy <br/>
 __Frontend__: Javascript, React, HTML <br/>
 
 
 ## Assumptions
- 1) Assumed each customer could only have one company
+- Assumed each customer could only have one company
  
- ## If I had more time
- 1) I would research how to include the filters in the URL parameters in React
- 2) Learned and added front end testing
+ ## If I had more time...
+ 1) I would learn how to use React Router to include the filters in the URL parameters
+ 2) Learn and write front end testing
  3) Added some styling
 
 
