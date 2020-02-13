@@ -6,8 +6,7 @@ class CustomerSearch extends React.Component {
             customers: {},
             inputValue: '',
             companies: {},
-            dropdownValue: '',
-            sortSelection: ''
+            dropdownValue: ''
         };
         this.handleSearchChange = this.handleSearchChange.bind(this);
     }
@@ -19,14 +18,6 @@ class CustomerSearch extends React.Component {
         $.get('/companies', (data) => {
             this.setState( {companies: data });
         });
-    }
-
-    handleSortChange(evt) {
-        this.setState({ sortSelection: evt.target.value });
-        $.get('/live_search', {name:this.state.inputValue, company:this.state.dropdownValue, sort:evt.target.value}, (data) => {
-            this.setState({ customers: data });
-        });
-
     }
 
     handleSearchChange(evt) {
@@ -43,7 +34,7 @@ class CustomerSearch extends React.Component {
             company = this.state.dropdownValue
         }
         
-        $.get('/live_search', {name:name, company:company, sort:this.state.sortSelection}, (data) => {
+        $.get('/live_search', {name:name, company:company}, (data) => {
             this.setState({ customers: data });
         });
     }
@@ -99,17 +90,6 @@ class CustomerSearch extends React.Component {
                             <option value=''> Select All</option>
                             {this.renderCompanies()} </select>
                     </div>
-                    // <div className="form-group">
-                    //     <label id="sort" htmlFor="name">
-                    //     </label>Sort results
-                    //     <select id="sort" onChange={this.handleSearchChange}>
-                    //         <option value="first_name_asc">First Name Ascending</option>
-                    //         <option value="first_name_desc">First Name Descending</option>
-                    //         <option value="last_name_asc">Last Name Ascending</option>
-                    //         <option value="last_name_desc">Last Name Descending</option>
-
-                    //     </select>
-                    // </div>
                 </form><br /><br />
                 
                 <form className="form-inline-2">

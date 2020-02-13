@@ -25,7 +25,6 @@ def index():
     '''Filter search results'''
     name = request.args.get("name")
     company = request.args.get("company")
-    sort = request.args.get("sortSelection")
 
     q = Customer.query
 
