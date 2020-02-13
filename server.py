@@ -10,7 +10,7 @@ app.secret_key = "ABC"
 
 @app.route("/customers", methods=["GET"])
 def search():
-    customer_name = request.args.get("query")
+    customer_name = request.args.get("name")
     q = Customer.query
     customers = q.filter(
         (Customer.first_name.ilike(f"%{customer_name}%"))
@@ -23,37 +23,46 @@ def search():
 @app.route("/live_search", methods = ["GET"])
 def index():
     '''Filter search results'''
-    search = request.args.get("query")
+    name = request.args.get("name")
+    company = request.args.get("company")
+    sort = request.args.get("sortSelection")
+
     q = Customer.query
-    customers = (
-        q.filter(
-            (Customer.first_name.ilike(f"%{search}%"))
-            | (Customer.last_name.ilike(f"%{search}%"))
-        )
-        .limit(20)
-        .all()
-    )
+
+    if name:
+        q = (
+            q.filter(
+                (Customer.first_name.ilike(f"%{name}%"))
+                | (Customer.last_name.ilike(f"%{name}%"))
+            ))
+    if company:
+        q = (
+            q.filter(
+                (Customer.company_id == company)))
+
+    customers = q.limit(20).all()
+
     results = {}
     for customer in customers:
         results[customer.customer_id] = {
             "first_name": customer.first_name,
             "last_name": customer.last_name,
-            "company_id": customer.company_id}
+            "company_id": customer.company_id,
+            "company_name": customer.company.name
+            }
 
     return jsonify(results)
 
-# @app.route("/dropdown", methods = ["GET"])
-# def dropdown():
+@app.route("/companies", methods = ["GET"])
+def display_companies():
 
-#     selection = request.args.get("dropdown")
-#     q = Company.query
-#     customers = (
-#         q.filter(
+    companies = Company.query.all()
 
-#                 )
-#         )
+    results = {}
+    for company in companies:
+        results[company.id] = company.name
 
-#     return jsonify(results)
+    return jsonify(results)
 
 
 

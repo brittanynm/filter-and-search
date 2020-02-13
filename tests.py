@@ -33,6 +33,7 @@ class FlaskTests(TestCase):
         tinfoil = Company.query.filter(Company.name == "Tinfoil").first()
         self.assertEqual(tinfoil.name, "Tinfoil")
 
+
 if __name__ == "__main__":
     import unittest
 
