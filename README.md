@@ -1,7 +1,7 @@
 # New Relic Take Home Exercise: Filter and Search
 
 
-Full stack app that allows you to filter a list of customers in two of three ways: Search by customer's first or last name via a text input field, Filter by a customer's company name via a dropdown, or sort by a customer's first name, last name, or company with both ascending and descending order. The system persists the text, company name, and sort in the URL as a query param. Include test coverage for both UI and BE
+A full stack app that allows you to filter a list of customers in two ways: Search by customer's first or last name via a text input field and filter by a customer's company via a dropdown. Includes test coverage for the BE.
 
 ## Setup
 
@@ -9,7 +9,7 @@ Before you begin the setup and installation process below, you'll need to have
 the following installed:
 
 - Python 3.0 or above
-- PostgreSQL 11
+- PostgreSQL
 
 
 ### Install Python dependencies
