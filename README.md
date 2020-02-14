@@ -1,4 +1,4 @@
-# New Relic Take Home Exercise: Filter and Search
+# Filter and Search
 
 
 A full stack app that allows you to filter a list of customers in two ways: Search by customer's first or last name via a text input field and filter by a customer's company via a dropdown. Includes test coverage for the BE.
